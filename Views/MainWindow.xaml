@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="WpfTrueSquashScoringC.Views.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfTrueSquashScoringC.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1200"
+             Background="DimGray"
+             >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20 "/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Margin="0,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">
+            <Label Content="{Binding MyScore.LeftScore,Mode=OneWay}" Background="AntiqueWhite" />
+            <Label Content="Version"/>
+            <Button Content="Open Window" Click="ButtonClickOpenWindow" Height="25" Margin="10,0" Name="button1" VerticalAlignment="Top" Width="100" />
+            <Button Content="Zmen score" Click="ButtonClickZmenScore" Height="25" Margin="10,0" Name="button2" VerticalAlignment="Top" Width="100" />
+            <Button Content="Close App" Click="ButtonCloseApp" Height="25" Margin="10,0" Name="button3" VerticalAlignment="Top" Width="100" />
+        </StackPanel>
+
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="200*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnScore" MaxHeight="50" Content="Score" Grid.Column="0" Grid.Row="0" Margin="0,0,10,0"/>
+            <Button x:Name="btnSettings" MaxHeight="50" Content="Settings" Grid.Column="1" Grid.Row="0" Margin="0,0,10,0"/>
+            <TextBox x:Name="txtNumValueLeft" MinWidth="50" MinHeight="50" Grid.Column="2" Grid.Row="0" BorderThickness="1" BorderBrush="#FFD5D5D5" FontSize="30" VerticalContentAlignment="Center"  TextAlignment="Center" Margin="10,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFB4B3B3" Foreground="White" Text="{Binding MyScore.LeftScore}"/>
+            <TextBox x:Name="txtNumValueRight" MinWidth="50" MinHeight="50" Grid.Column="3" Grid.Row="0" BorderThickness="1" BorderBrush="#FFD5D5D5" FontSize="30" VerticalContentAlignment="Center"  TextAlignment="Center" Margin="10,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FFB4B3B3" Foreground="White" Text="{Binding MyScore.RightScore}"/>
+            <!-- <Image Source="/WpfTrueSquashScoring;component/Images/LOGO_True_p.png" Grid.Column="2" HorizontalAlignment="Right" Height="80" Margin="0,0,0,0" VerticalAlignment="Stretch" /> -->
+        </Grid>
+
+
+        <Grid Grid.Row="2" Grid.Column="1" Visibility="{Binding isScoreVisible}">
+            <local:UserControlScore x:Name="uscScore" Height="auto" Margin="0,20,0,0" VerticalAlignment="Center" Width="auto"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1" Visibility="{Binding isSettingsVisible}">
+            <local:UserControlSettings x:Name="uscSettings" Height="auto" Margin="0,71,0,51.5" VerticalAlignment="Center" Width="auto" Grid.ColumnSpan="2"/>
+        </Grid>
+
+    </Grid>
+
+</UserControl>

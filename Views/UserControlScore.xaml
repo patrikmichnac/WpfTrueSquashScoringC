@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="WpfTrueSquashScoringC.Views.UserControlScore"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfTrueSquashScoringC.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical" Margin="0,0,0,20">
+            <TextBlock Text="Game name" HorizontalAlignment="Center" Margin="0,0,0,5" FontFamily="Segoe UI Light"/>
+            <TextBox  MinWidth="200" MinHeight="30" FontSize="25" Text="Open Game Squash Tournament" TextAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="0,10,10,10">
+            <TextBlock Text="Player name and country" HorizontalAlignment="Center" Margin="0,0,0,5" FontFamily="Segoe UI Light"/>
+            <TextBox  MinWidth="200" MinHeight="30" FontSize="25" Text="John Doe" TextAlignment="Center" Margin="0,0,0,10" HorizontalAlignment="Stretch"/>
+            <ComboBox x:Name="cmbLeftPlayer" MinWidth="200" MinHeight="30" Margin="0,5,0,5"/>
+            <Button x:Name="btnLeftPlayerList" MinWidth="100" MinHeight="30" Content="Player List" Margin="0,5,0,5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="10,10,0,10">
+            <TextBlock Text="Player name and country" HorizontalAlignment="Center" Margin="0,0,0,5" FontFamily="Segoe UI Light"/>
+            <TextBox  MinWidth="200" MinHeight="30" FontSize="25" Text="John Doe" Margin="0,0,0,10" TextAlignment="Center"/>
+            <ComboBox x:Name="cmbRightPlayer" MinWidth="200" MinHeight="30" Margin="0,5,0,5"/>
+            <Button x:Name="btnRightPlayerList" MinWidth="100" MinHeight="30" Content="Player List" Margin="0,5,0,5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+            <Ellipse Name="LeftEllipse" Width="50" Height="50" Fill="Green" Margin="10,0,30,0" HorizontalAlignment="Left"/>
+
+            <TextBlock Text="SCORE" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="120,0" FontFamily="Segoe UI Light"/>
+
+            <Ellipse Name="Rightllipse" Width="50" Height="50" Fill="Green" Margin="30,0,10,0" HorizontalAlignment="Right"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+
+        </StackPanel>
+    </Grid>
+</UserControl>
